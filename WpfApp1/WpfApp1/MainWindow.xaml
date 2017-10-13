@@ -1,0 +1,50 @@
+﻿ <Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="637.545" Width="869.761">
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,0,1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="81*"/>
+            <ColumnDefinition Width="503*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.292"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <TextBox x:Name="Name" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="20" Margin="10,15,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Surname" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="20" Margin="10,40,0,0" TextWrapping="Wrap" Text="Surname" VerticalAlignment="Top" Width="120"/>
+        <DatePicker x:Name="DateOfBirth" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,65,0,0" Grid.ColumnSpan="2" Width="120" DisplayDate="1990-09-21" Text="Date of birth"/>
+        <ComboBox x:Name="City" HorizontalAlignment="Left" Height="20" Margin="10,94,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2">
+            <ComboBoxItem Content="Almaty" ContentStringFormat="Almaty"/>
+            <ComboBoxItem Content="Astana" ContentStringFormat="Astana"/>
+            <ComboBoxItem Content="Karagandy" ContentStringFormat="Karagandy"/>
+        </ComboBox>     
+        <TextBox x:Name="Email" HorizontalAlignment="Left" Height="20" Margin="10,119,0,0" TextWrapping="Wrap" Text="email" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <RadioButton x:Name="Male" Content="M" HorizontalAlignment="Left" Margin="10,144,0,0" VerticalAlignment="Top" Height="20" Width="40" Click="Male_Click"/>
+        <RadioButton x:Name="Female" Content="F" Margin="50,144,0,0" VerticalAlignment="Top" Height="20" HorizontalAlignment="Left" Width="40" Click="Female_Click"/>
+        <RadioButton x:Name="Undecided" Content="U" HorizontalAlignment="Left" Margin="90,144,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="20" Width="40" Click="Undecided_Click"/>
+        <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Left" Height="20" Margin="10,169,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Click="Submit_Click"/>
+        <DataGrid x:Name="GridData" Grid.Column="1" HorizontalAlignment="Left" Height="174" Margin="40,15,0,0" VerticalAlignment="Top" Width="560" >
+            <DataGrid.Columns>
+                <DataGridTemplateColumn ClipboardContentBinding="{x:Null}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="Button_Click">
+                                Delete
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
